@@ -1,0 +1,18 @@
+/* Additional theme variables and specifics if needed */
+:root {
+  --color-dark: #111111;
+  --color-gold: #D4AF37;
+  --color-rose: #B76E79;
+  --color-cream: #F5F5F0;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-rose));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

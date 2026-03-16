@@ -1,0 +1,19 @@
+:root {
+  --color-pink: #FDEFEF;
+  --color-champagne: #F7E7CE;
+  --color-purple: #E0BBE4;
+  --color-rose: #D291BC;
+  --color-dark: #2B2D42;
+  --color-white: #FFFFFF;
+}
+
+::selection {
+  background-color: var(--color-purple);
+  color: var(--color-white);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-rose), var(--color-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
