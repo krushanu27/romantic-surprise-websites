@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import PageTransition from '../components/common/PageTransition';
 import SectionTitle from '../components/common/SectionTitle';
 import EnvelopeOpenAnimation from '../components/letter/EnvelopeOpenAnimation';
-import LoveLetterSection from '../components/letter/LoveLetterSection';
 import Button from '../components/common/Button';
 import { Heart } from 'lucide-react';
 
@@ -18,11 +17,7 @@ const Letter = () => {
           subtitle="Some things are easier to write than to say."
         />
 
-        <div className="mb-12 md:mb-16">
-          <EnvelopeOpenAnimation />
-        </div>
-
-        <LoveLetterSection />
+        <EnvelopeOpenAnimation />
 
         <div className="flex justify-center mt-16 md:mt-20">
           <Button onClick={() => navigate('/reasons')} className="text-lg px-8 py-4">
