@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Music, VolumeX } from 'lucide-react';
 
-const audio = new Audio('/music/blue.mp3');
-audio.loop = true;
-audio.volume = 0.35;
+/* ✅ SINGLE GLOBAL AUDIO INSTANCE (critical fix) */
+if (!window.__bgAudio) {
+  window.__bgAudio = new Audio('/music/blue.mp3');
+  window.__bgAudio.loop = true;
+  window.__bgAudio.volume = 0.35;
+}
+
+const audio = window.__bgAudio;
 
 let fadeInterval = null;
 
+/* ▶️ PLAY */
 export const playBackgroundMusic = () => {
   if (fadeInterval) {
     clearInterval(fadeInterval);
@@ -18,6 +24,7 @@ export const playBackgroundMusic = () => {
   });
 };
 
+/* ⏸ PAUSE */
 export const pauseBackgroundMusic = () => {
   if (fadeInterval) {
     clearInterval(fadeInterval);
@@ -27,12 +34,21 @@ export const pauseBackgroundMusic = () => {
   audio.pause();
 };
 
-export const fadeBackgroundMusic = (targetVolume = 0.12, step = 0.02, interval = 180) => {
+/* 🎚 FADE */
+export const fadeBackgroundMusic = (
+  targetVolume = 0.02,
+  step = 0.04,
+  interval = 120
+) => {
+  console.log("FADE STARTED");
+
   if (fadeInterval) {
     clearInterval(fadeInterval);
   }
 
   fadeInterval = setInterval(() => {
+    console.log("Volume:", audio.volume);
+
     if (audio.paused) {
       clearInterval(fadeInterval);
       fadeInterval = null;
@@ -42,12 +58,14 @@ export const fadeBackgroundMusic = (targetVolume = 0.12, step = 0.02, interval =
     if (audio.volume > targetVolume) {
       audio.volume = Math.max(targetVolume, audio.volume - step);
     } else {
+      console.log("FADE COMPLETE");
       clearInterval(fadeInterval);
       fadeInterval = null;
     }
   }, interval);
 };
 
+/* 🔊 RESET VOLUME */
 export const resetBackgroundMusicVolume = (volume = 0.35) => {
   audio.volume = volume;
 };
@@ -69,8 +87,8 @@ const BackgroundMusicToggle = () => {
 
   const toggleMusic = () => {
     if (audio.paused) {
+      resetBackgroundMusicVolume(0.35); // ensure full volume when restarting
       playBackgroundMusic();
-      resetBackgroundMusicVolume(0.35);
     } else {
       pauseBackgroundMusic();
     }

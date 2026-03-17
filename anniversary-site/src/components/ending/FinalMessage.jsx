@@ -31,7 +31,11 @@ const FinalMessage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fadeBackgroundMusic(0.005, 0.04, 100);
+    const timer = setTimeout(() => {
+      fadeBackgroundMusic(0.005, 0.04, 100);
+    }, 2500); // delay fade so user feels it
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
