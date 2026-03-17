@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import PageTransition from '../components/common/PageTransition';
 import SectionTitle from '../components/common/SectionTitle';
 import { reasonsData } from '../data/reasonsData';
 import { Heart } from 'lucide-react';
+import Button from '../components/common/Button';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,10 +30,11 @@ const cardVariants = {
 };
 
 const Reasons = () => {
+  const navigate = useNavigate();
+
   return (
     <PageTransition>
       <div className="container mx-auto px-4 max-w-5xl">
-
         <SectionTitle
           title="Reasons My Heart Chose You"
           subtitle="Not loud reasons. Just honest ones."
@@ -67,6 +70,23 @@ const Reasons = () => {
           ))}
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="flex flex-col items-center text-center mt-16 md:mt-20"
+        >
+          <p className="text-softCream/70 text-base md:text-lg italic mb-6 max-w-2xl leading-relaxed">
+            And after every reason, every memory, and every quiet step that brought us here,
+            there is still one thing my heart wants to say.
+          </p>
+
+          <Button onClick={() => navigate('/forever')} className="text-lg px-8 py-4">
+            <span>One Last Thing</span>
+            <Heart className="w-5 h-5 ml-2" fill="currentColor" />
+          </Button>
+        </motion.div>
       </div>
     </PageTransition>
   );
