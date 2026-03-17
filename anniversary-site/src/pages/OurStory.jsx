@@ -2,11 +2,14 @@ import React, { useEffect } from 'react';
 import PageTransition from '../components/common/PageTransition';
 import SectionTitle from '../components/common/SectionTitle';
 import TimelineSection from '../components/timeline/TimelineSection';
-import { playBackgroundMusic } from '../components/common/BackgroundMusicToggle';
+import {
+  playBackgroundMusic,
+  resetBackgroundMusicVolume,
+} from '../components/common/BackgroundMusicToggle';
 
 const OurStory = () => {
-
   useEffect(() => {
+    resetBackgroundMusicVolume(0.35);
     playBackgroundMusic();
   }, []);
 

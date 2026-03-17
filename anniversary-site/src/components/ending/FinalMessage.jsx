@@ -31,7 +31,7 @@ const FinalMessage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fadeBackgroundMusic(0.12, 0.02, 180);
+    fadeBackgroundMusic(0.005, 0.04, 100);
   }, []);
 
   return (
