@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -7,19 +7,19 @@ import BackgroundMusicToggle from '../components/common/BackgroundMusicToggle';
 const MainLayout = () => {
   const location = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen relative overflow-x-hidden">
+    <div className="min-h-screen bg-darkBg text-softCream flex flex-col">
       <Navbar />
       <BackgroundMusicToggle />
-
-      <main className="flex-grow">
+      <main className="flex-1">
         <Outlet />
       </main>
-
       <Footer />
     </div>
   );

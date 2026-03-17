@@ -31,16 +31,20 @@ const FinalMessage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
     const timer = setTimeout(() => {
       fadeBackgroundMusic(0.005, 0.04, 100);
-    }, 2500); // delay fade so user feels it
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center px-4 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accentGold/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accentRose/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 pointer-events-none" />
 
       <motion.div
@@ -78,7 +82,7 @@ const FinalMessage = () => {
 
         <motion.div
           variants={itemVariants}
-          className="w-24 h-px bg-gradient-to-r from-transparent via-accentGold to-transparent mx-auto mb-12"
+          className="w-24 h-px bg-gradient-to-r from-transparent via-accentRose to-transparent mx-auto mb-12"
         />
 
         <motion.p
@@ -88,8 +92,11 @@ const FinalMessage = () => {
           Thank you for every small step, every quiet moment, and every chance to keep building us.
         </motion.p>
 
-        <motion.div variants={itemVariants}>
-          <Button onClick={() => navigate('/')} variant="outline" className="px-8 py-3">
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center"
+        >
+          <Button onClick={() => navigate('/')} className="px-8 py-3">
             Back to the Beginning
           </Button>
         </motion.div>
