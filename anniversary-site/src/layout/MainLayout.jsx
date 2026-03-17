@@ -1,25 +1,24 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import BackgroundMusicToggle from '../components/common/BackgroundMusicToggle';
 
 const MainLayout = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="flex flex-col min-h-screen relative overflow-x-hidden">
       <Navbar />
-
       <BackgroundMusicToggle />
 
-      <motion.main
-        className="flex-grow"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-      >
+      <main className="flex-grow">
         <Outlet />
-      </motion.main>
+      </main>
 
       <Footer />
     </div>
