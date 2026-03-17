@@ -7,7 +7,10 @@ const Gallery = () => {
   return (
     <PageTransition>
       <div className="container mx-auto px-4">
-        <SectionTitle title="Captured Moments" subtitle="Fragments of Time" />
+        <SectionTitle
+          title="Moments That Became Memories"
+          subtitle="Little pieces of us, quietly becoming something beautiful."
+        />
         <GalleryGrid />
       </div>
     </PageTransition>

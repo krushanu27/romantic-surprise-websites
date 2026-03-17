@@ -1,31 +1,34 @@
-// Placeholder data for the timeline
 export const timelineData = [
   {
     id: 1,
-    date: "A Magical Day, 2021",
-    title: "The First Time We Met",
-    description: "The moment our eyes met, everything else faded away. I still remember exactly what you were wearing and how my heart skipped a beat.",
-    image: "/images/timeline/placeholder-1.jpg"
+    date: "Where It Quietly Began",
+    title: "A First Meeting That Meant Nothing... Yet",
+    description:
+      "We first met at a get-together arranged through our families, without knowing that life was gently placing us on the same path. It was not a dramatic beginning. No grand signs, no instant promises. Just one ordinary moment that would later become unforgettable to me.",
+    image: "/images/timeline/placeholder-1.jpg",
   },
   {
     id: 2,
-    date: "A Starry Night, 2022",
-    title: "Our First Real Date",
-    description: "We talked for hours as if we had known each other our entire lives. The world outside didn't matter anymore, it was just us.",
-    image: "/images/timeline/placeholder-2.jpg"
+    date: "When Life Asked Us To Try",
+    title: "A New Chapter After A Difficult One",
+    description:
+      "When our story began to take shape, your heart was still carrying the weight of a long past. I knew I was not entering an empty space. So I never wanted to rush you, force you, or demand feelings before they were ready. I only wanted to stand beside you with honesty, care, and patience.",
+    image: "/images/timeline/placeholder-2.jpg",
   },
   {
     id: 3,
-    date: "A Sunny Afternoon, 2023",
-    title: "The First 'I Love You'",
-    description: "Those three little words that changed everything. Saying it for the first time felt like finally coming home.",
-    image: "/images/timeline/placeholder-3.jpg"
+    date: "The Months That Built Us",
+    title: "Slowly, Softly, Surely",
+    description:
+      "What we built was never loud. It grew in small conversations, quiet efforts, and the decision to keep showing up for each other. While acceptance took time, my choice never changed. I kept choosing you, not because it was easy, but because loving you felt worth every bit of patience it asked from me.",
+    image: "/images/timeline/placeholder-3.jpg",
   },
   {
     id: 4,
-    date: "Today & Always, 2026",
-    title: "Choosing Forever",
-    description: "Every day since I met you has been an adventure. I wouldn't trade a single second of our journey together.",
-    image: "/images/timeline/placeholder-4.jpg"
-  }
+    date: "Today, And For All The Days Ahead",
+    title: "My Promise Is Still The Same",
+    description:
+      "Even now, I do not measure us by speed. I measure us by sincerity, by respect, by the way my heart still chooses you with complete certainty. This anniversary is not only about how far we have come. It is about the home I still hope to build with you, gently, faithfully, and for a very long time.",
+    image: "/images/timeline/placeholder-4.jpg",
+  },
 ];
