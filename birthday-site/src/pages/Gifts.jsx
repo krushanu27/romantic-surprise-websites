@@ -1,19 +1,34 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import SectionTitle from '../components/common/SectionTitle';
 import GiftSection from '../components/gifts/GiftSection';
+import Button from '../components/common/Button';
+import PageTransition from '../components/common/PageTransition';
 
 const Gifts = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="container mx-auto px-4"
-    >
-      <SectionTitle title="22 Little Surprises" subtitle="Just For You" />
-      <GiftSection />
-    </motion.div>
+    <PageTransition>
+      <section className="min-h-screen px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionTitle
+            title="Gifts for You"
+            subtitle="A few little things, wrapped with love."
+          />
+
+          <GiftSection />
+
+          <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <Link to="/">
+              <Button variant="outline">Previous</Button>
+            </Link>
+
+            <Link to="/reasons">
+              <Button>Next</Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </PageTransition>
   );
 };
 
