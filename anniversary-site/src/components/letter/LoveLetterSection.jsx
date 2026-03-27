@@ -44,9 +44,9 @@ const LoveLetterSection = () => {
 
         <p>
           On this anniversary, I am not making a loud promise. I am making a quiet one, and I
-          think those matter more. I will keep choosing you with respect. I will keep valuing your
-          heart gently. I will keep hoping, patiently and sincerely, for the beautiful life we may
-          still grow into together.
+          think that matters more. I will keep choosing you with respect. I will keep valuing your
+          heart gently. I will keep hoping, patiently and sincerely, for our love to grow and cherish the moments we are going to make together.
+          Today, Tomorrow and Always🩵🧿.
         </p>
 
         <p>
@@ -54,7 +54,7 @@ const LoveLetterSection = () => {
           love can be measured in patience, care, and staying when things are not easy, then please
           know this with all certainty:
           <br />
-          I am still choosing you.
+          I am still and always going to choose you no matter what.
         </p>
 
         <p className="pt-8">
