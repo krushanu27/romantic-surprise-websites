@@ -27,8 +27,8 @@ const Letter = () => {
               <Button variant="outline">Previous</Button>
             </Link>
 
-            <Link to="/surprise">
-              <Button>Next</Button>
+            <Link to="/">
+              <Button>Back to Start</Button>
             </Link>
           </div>
         </div>

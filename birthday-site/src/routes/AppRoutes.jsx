@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import MainLayout from '../layout/MainLayout';
 import Home from '../pages/Home';
 import Gifts from '../pages/Gifts';
 import Reasons from '../pages/22Reasons';
 import Memories from '../pages/Memories';
 import Letter from '../pages/Letter';
-import Surprise from '../pages/Surprise';
 import NotFound from '../pages/NotFound';
 
 const AppRoutes = () => {
@@ -19,7 +19,7 @@ const AppRoutes = () => {
           <Route path="reasons" element={<Reasons />} />
           <Route path="memories" element={<Memories />} />
           <Route path="letter" element={<Letter />} />
-          <Route path="surprise" element={<Surprise />} />
+
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
